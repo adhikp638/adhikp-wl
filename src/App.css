@@ -1,105 +1,105 @@
-.App {
-	  font-family: sans-serif;
-	    text-align: center;
-    }
+/* Default styles */
+html, body {
+	  margin: 0;
+	    padding: 0;
+	      font-family: sans-serif;
+      }
 
-    .header {
-	      display: flex;
-	        justify-content: space-between;
-		  align-items: center;
-		    height: 80px;
-		      padding: 0 20px;
-		        background-color: #1e2d4a;
-			  color: white;
+      /* Header */
+      header {
+	        background-color: #333;
+		  color: #fff;
+		    display: flex;
+		      justify-content: space-between;
+		        align-items: center;
+			  padding: 10px;
 		  }
 
-		  .menu-icon {
-			    cursor: pointer;
+		  header h1 {
+			    margin: 0;
 		    }
 
-		    .menu-items {
-			      position: absolute;
-			        top: 80px;
-				  right: 0;
-				    width: 200px;
-				      height: 200px;
-				        background-color: white;
-					  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+		    header ul {
+			      display: flex;
+			        margin: 0;
+				  padding: 0;
+			  }
+
+			  header li {
+				    list-style: none;
+				      margin: 0 10px;
+			      }
+
+			      /* Burger Icon */
+			      .burger-icon {
+				        width: 30px;
+					  height: 22.5px;
 					    display: flex;
 					      flex-direction: column;
-					        justify-content: center;
-						  align-items: center;
-						    opacity: 0;
-						      pointer-events: none;
-						        transition: all 0.3s ease-in-out;
+					        justify-content: space-between;
+						  cursor: pointer;
+					  }
+
+					  .burger-icon div {
+						    width: 100%;
+						      height: 3px;
+						        background-color: #fff;
 						}
 
-						.menu-items.active {
-							  opacity: 1;
-							    pointer-events: auto;
-						    }
-
-						    .menu-items ul {
-							      list-style: none;
-							        padding: 0;
-								  margin: 0;
-								    display: flex;
-								      flex-direction: column;
-								        align-items: center;
-								}
-
-								.menu-items li {
-									  margin: 10px 0;
+						/* Overlay */
+						.overlay {
+							  position: fixed;
+							    top: 0;
+							      left: 0;
+							        width: 100%;
+								  height: 100%;
+								    background-color: rgba(0, 0, 0, 0.8);
+								      display: none;
+								        justify-content: center;
+									  align-items: center;
 								  }
 
-								  .menu-items a {
-									    color: black;
-									      text-decoration: none;
-								      }
+								  .overlay.active {
+									    display: flex;
+								    }
 
-								      .header-links {
-									        display: flex;
+								    /* Menu */
+								    .menu {
+									      display: flex;
+									        flex-direction: column;
 										  align-items: center;
-										    justify-content: center;
-										      text-align: center;
-										        height: 80px;
+										    text-align: center;
+									    }
+
+									    .menu li {
+										      list-style: none;
+										        margin: 10px;
 										}
 
-										.header-links a {
-											  color: white;
-											    text-decoration: none;
-											      font-weight: bold;
-											        margin: 0 10px;
-											}
+										/* Tiles */
+										.tile-container {
+											  display: flex;
+											    justify-content: center;
+										    }
 
-											.tile-container {
-												  display: flex;
-												    justify-content: center;
-												      align-items: center;
-												        flex-wrap: wrap;
-												}
+										    .tile {
+											      background-color: #ddd;
+											        margin: 10px;
+												  padding: 20px;
+												    width: 200px;
+												      height: 200px;
+												        display: flex;
+													  flex-direction: column;
+													    justify-content: center;
+													      align-items: center;
+													        transition: transform 0.2s ease-in-out;
+													}
 
-												.tile {
-													  margin: 10px;
-													    padding: 20px;
-													      border-radius: 5px;
-													        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-														  transition: all 0.3s ease-in-out;
-														    text-align: center;
-														      background-color: white;
-														        width: 300px;
-															  height: 200px;
-															    display: flex;
-															      flex-direction: column;
-															        justify-content: center;
-																  align-items: center;
-															  }
+													.tile:hover {
+														  transform: translateY(-5px);
+													  }
 
-															  .tile:hover {
-																    transform: translateY(-5px);
-															    }
-
-															    .tile h2 {
-																      margin-top: 0;
-															      }
+													  .tile h2 {
+														    margin-top: 0;
+													    }
 

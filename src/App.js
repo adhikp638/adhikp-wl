@@ -1,40 +1,40 @@
-import React, { useState } from "react";
-import "./App.css";
-import { Tile } from "@kiwicom/orbit-components";
+import { useState } from "react";
+import Tile from "./Tile";
+import "./Tile.css";
 
 function App() {
-	  const [isOpen, setIsOpen] = useState(false);
+	  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	  const toggleMenu = () => setIsOpen(!isOpen);
+	  const toggleMenu = () => {
+		      setIsMenuOpen(!isMenuOpen);
+		    };
 
 	  return (
 		      <div className="App">
-		        <header className="App-header">
-		          <div className="menu">
-		            <button className="burger-icon" onClick={toggleMenu}>
-		              <span className="line"></span>
-		              <span className="line"></span>
-		              <span className="line"></span>
-		            </button>
-		            {isOpen && (
-				                <div className="menu-items">
-				                  <a href="#">Menu Item 1</a>
-				                  <a href="#">Menu Item 2</a>
-				                  <a href="#">Menu Item 3</a>
-				                </div>
-				              )}
+		        <header>
+		          <div className="burger-menu" onClick={toggleMenu}>
+		            <div className="line"></div>
+		            <div className="line"></div>
+		            <div className="line"></div>
 		          </div>
 		          <div className="header-links">
-		            <a href="#">Link 1</a>
-		            <a href="#">Link 2</a>
-		            <a href="#">Link 3</a>
+		            <a href="/">Link1</a>
+		            <a href="/">Link2</a>
+		            <a href="/">Link3</a>
 		          </div>
 		        </header>
-		        <div className="tiles">
+		        {isMenuOpen && (
+				        <div className="menu-items">
+				          <a href="/">Menu Item 1</a>
+				          <a href="/">Menu Item 2</a>
+				          <a href="/">Menu Item 3</a>
+				        </div>
+				      )}
+		        <main>
 		          <Tile title="Tile 1" />
 		          <Tile title="Tile 2" />
 		          <Tile title="Tile 3" />
-		        </div>
+		        </main>
 		      </div>
 		    );
 }
