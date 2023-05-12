@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import Tile from "./Tile";
+import { Tile } from "@kiwicom/orbit-components";
 
 function App() {
 	  const [isOpen, setIsOpen] = useState(false);
