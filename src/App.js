@@ -1,42 +1,41 @@
-import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+	  const [isActive, setActive] = useState(false);
+
+	  const handleToggle = () => {
+		      setActive(!isActive);
+		    };
+
 	  return (
 		      <div className="App">
 		        <header>
 		          <nav>
-		            <Menu>
-		              <a className="menu-item" href="/">
-		                Link 1
-		              </a>
-		              <a className="menu-item" href="/">
-		                Link 2
-		              </a>
-		              <a className="menu-item" href="/">
-		                Link 3
-		              </a>
-		            </Menu>
+		            <div className="burger-icon" onClick={handleToggle}>
+		              <span></span>
+		              <span></span>
+		              <span></span>
+		            </div>
 		            <div className="header-links">
-		              <a href="/">Link 1</a>
-		              <a href="/">Link 2</a>
-		              <a href="/">Link 3</a>
+		              <a href="#">Link 1</a>
+		              <a href="#">Link 2</a>
+		              <a href="#">Link 3</a>
 		            </div>
 		          </nav>
 		        </header>
 		        <main>
-		          <div className="tile" id="tile1">
+		          <div className="tile">
 		            <h2>Tile 1</h2>
-		            <p>This is the content for Tile 1.</p>
+		            <p>Some content here</p>
 		          </div>
-		          <div className="tile" id="tile2">
+		          <div className="tile">
 		            <h2>Tile 2</h2>
-		            <p>This is the content for Tile 2.</p>
+		            <p>Some content here</p>
 		          </div>
-		          <div className="tile" id="tile3">
+		          <div className="tile">
 		            <h2>Tile 3</h2>
-		            <p>This is the content for Tile 3.</p>
+		            <p>Some content here</p>
 		          </div>
 		        </main>
 		      </div>
