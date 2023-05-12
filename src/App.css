@@ -1,3 +1,6 @@
+/*import styles from orbit components*/
+@import "~@kiwicom/orbit-components/lib/orbit-components.css";
+
 /* Default styles */
 html, body {
 	  margin: 0;
