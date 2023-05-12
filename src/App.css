@@ -2,19 +2,19 @@
 	  font-family: sans-serif;
   }
 
-header {
-	background-color: #333;
-	color: white;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px;
- }
+  header {
+	    background-color: #333;
+	      color: white;
+	        display: flex;
+		  justify-content: space-between;
+		    align-items: center;
+		      padding: 10px;
+	      }
 
-nav {
-	display: flex;
-	align-items: center;
- }
+	      nav {
+		        display: flex;
+			  align-items: center;
+		  }
 
 		  .header-links {
 			    display: flex;
@@ -26,25 +26,67 @@ nav {
 				  margin-left: 20px;
 			  }
 
-			  .tile {
-				    width: 300px;
-				      height: 200px;
-				        background-color: #eee;
-					  margin: 20px;
-					    display: inline-block;
-					      position: relative;
-					        transition: transform 0.2s ease-in-out;
-					}
+			  .burger-icon {
+				    display: block;
+				      position: relative;
+				        width: 20px;
+					  height: 20px;
+					    cursor: pointer;
+				    }
 
-					.tile h2 {
-						  margin: 20px;
-					  }
+				    .burger-icon span {
+					      display: block;
+					        position: absolute;
+						  height: 2px;
+						    width: 100%;
+						      background: white;
+						        transition: transform 0.3s ease-in-out;
+						}
 
-					  .tile p {
-						    margin: 20px;
-					    }
+						.burger-icon span:nth-child(1) {
+							  top: 0;
+						  }
 
-					    .tile:hover {
-						      transform: translateY(-5px);
-					      }
+						  .burger-icon span:nth-child(2) {
+							    top: 50%;
+							      transform: translateY(-50%);
+						      }
+
+						      .burger-icon span:nth-child(3) {
+							        bottom: 0;
+							}
+
+							.burger-icon.active span:nth-child(1) {
+								  transform: rotate(45deg) translate(7px, 7px);
+							  }
+
+							  .burger-icon.active span:nth-child(2) {
+								    opacity: 0;
+							    }
+
+							    .burger-icon.active span:nth-child(3) {
+								      transform: rotate(-45deg) translate(7px, -7px);
+							      }
+
+							      .tile {
+								        width: 300px;
+									  height: 200px;
+									    background-color: #eee;
+									      margin: 20px;
+									        display: inline-block;
+										  position: relative;
+										    transition: transform 0.2s ease-in-out;
+									    }
+
+									    .tile h2 {
+										      margin: 20px;
+									      }
+
+									      .tile p {
+										        margin: 20px;
+										}
+
+										.tile:hover {
+											  transform: translateY(-5px);
+										  }
 
