@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Tile from "./Tile";
+import Tile from '@kiwicom/orbit-components/lib/Tile';
 import "./Tile.css";
 
 function App() {
