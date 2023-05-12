@@ -1,108 +1,72 @@
-/*import styles from orbit components*/
-@import "~@kiwicom/orbit-components/lib/orbit-components.css";
+.App {
+	  font-family: sans-serif;
+  }
 
-/* Default styles */
-html, body {
-	  margin: 0;
-	    padding: 0;
-	      font-family: sans-serif;
-      }
+  header {
+	    display: flex;
+	      justify-content: space-between;
+	        align-items: center;
+		  height: 60px;
+		    padding: 0 20px;
+		      background-color: #fff;
+		        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		}
 
-      /* Header */
-      header {
-	        background-color: #333;
-		  color: #fff;
-		    display: flex;
-		      justify-content: space-between;
-		        align-items: center;
-			  padding: 10px;
-		  }
+		.burger-menu {
+			  display: flex;
+			    flex-direction: column;
+			      justify-content: space-between;
+			        cursor: pointer;
+				  width: 30px;
+				    height: 20px;
+			    }
 
-		  header h1 {
-			    margin: 0;
-		    }
+			    .line {
+				      width: 100%;
+				        height: 2px;
+					  background-color: #333;
+					    transition: all 0.2s;
+				    }
 
-		    header ul {
-			      display: flex;
-			        margin: 0;
-				  padding: 0;
-			  }
-
-			  header li {
-				    list-style: none;
-				      margin: 0 10px;
-			      }
-
-			      /* Burger Icon */
-			      .burger-icon {
-				        width: 30px;
-					  height: 22.5px;
-					    display: flex;
-					      flex-direction: column;
-					        justify-content: space-between;
-						  cursor: pointer;
+				    .line:first-child {
+					      transform: translateY(${(props) => (props.isMenuOpen ? "8px" : "0")})
+					          rotate(${(props) => (props.isMenuOpen ? "45deg" : "0")});
 					  }
 
-					  .burger-icon div {
-						    width: 100%;
-						      height: 3px;
-						        background-color: #fff;
-						}
+					  .line:nth-child(2) {
+						    opacity: ${(props) => (props.isMenuOpen ? "0" : "1")};
+					    }
 
-						/* Overlay */
-						.overlay {
-							  position: fixed;
-							    top: 0;
-							      left: 0;
-							        width: 100%;
-								  height: 100%;
-								    background-color: rgba(0, 0, 0, 0.8);
-								      display: none;
-								        justify-content: center;
-									  align-items: center;
-								  }
+					    .line:last-child {
+						      transform: translateY(${(props) => (props.isMenuOpen ? "-8px" : "0")})
+						          rotate(${(props) => (props.isMenuOpen ? "-45deg" : "0")});
+						  }
 
-								  .overlay.active {
-									    display: flex;
-								    }
+						  .header-links a {
+							    margin-left: 20px;
+							      text-decoration: none;
+							        color: #333;
+								  font-size: 18px;
+							  }
 
-								    /* Menu */
-								    .menu {
-									      display: flex;
-									        flex-direction: column;
-										  align-items: center;
-										    text-align: center;
-									    }
+							  .menu-items {
+								    background-color: #fff;
+								      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+								        padding: 20px;
+									  position: absolute;
+									    top: 60px;
+									      right: 20px;
+								      }
 
-									    .menu li {
-										      list-style: none;
-										        margin: 10px;
-										}
+								      .menu-items a {
+									        display: block;
+										  margin-bottom: 10px;
+										    text-decoration: none;
+										      color: #333;
+									      }
 
-										/* Tiles */
-										.tile-container {
-											  display: flex;
-											    justify-content: center;
+									      main {
+										        display: grid;
+											  grid-template-columns: repeat(3, 1fr);
+											    gap: 20px
 										    }
-
-										    .tile {
-											      background-color: #ddd;
-											        margin: 10px;
-												  padding: 20px;
-												    width: 200px;
-												      height: 200px;
-												        display: flex;
-													  flex-direction: column;
-													    justify-content: center;
-													      align-items: center;
-													        transition: transform 0.2s ease-in-out;
-													}
-
-													.tile:hover {
-														  transform: translateY(-5px);
-													  }
-
-													  .tile h2 {
-														    margin-top: 0;
-													    }
-

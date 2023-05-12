@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Tile } from "@kiwicom/orbit-components";
 
+import "./App.css";
+
 function App() {
 	  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
