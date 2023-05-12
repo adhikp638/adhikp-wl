@@ -1,50 +1,47 @@
-import React, { useState } from 'react';
-import './App.css';
+/* App.js */
+import "./App.css";
+import Tile from "./Tile";
+import React, { useState } from "react";
 
 function App() {
-	  const [menuOpen, setMenuOpen] = useState(false);
-
-	  const toggleMenu = () => {
-		      setMenuOpen(!menuOpen);
-		    };
+	  const [tiles, setTiles] = useState([
+		      { id: 1, text: "Tile 1" },
+		      { id: 2, text: "Tile 2" },
+		      { id: 3, text: "Tile 3" },
+		    ]);
 
 	  return (
 		      <div className="App">
-		        <header className="App-header">
-		          <div className="container">
-		            <div className="menu-icon" onClick={toggleMenu}>
-		              <div className="menu-icon__line"></div>
-		              <div className="menu-icon__line"></div>
-		              <div className="menu-icon__line"></div>
-		            </div>
-		            <nav className={`navbar ${menuOpen ? "show" : ""}`}>
-		              <ul>
-		                <li><a href="#">Menu Item 1</a></li>
-		                <li><a href="#">Menu Item 2</a></li>
-		                <li><a href="#">Menu Item 3</a></li>
-		              </ul>
-		            </nav>
-		            <div className="header-links">
-		              <a href="#">Link 1</a>
-		              <a href="#">Link 2</a>
-		              <a href="#">Link 3</a>
+		        <header>
+		          <div className="header-links">
+		            <a href="/">Link 1</a>
+		            <a href="/">Link 2</a>
+		            <a href="/">Link 3</a>
+		            <div className="burger-menu">
+		              <div className="menu">
+		                <a href="/">Link 1</a>
+		                <a href="/">Link 2</a>
+		                <a href="/">Link 3</a>
+		              </div>
+		              <svg
+		                xmlns="http://www.w3.org/2000/svg"
+		                width="32"
+		                height="32"
+		                viewBox="0 0 24 24"
+		                fill="#ffffff"
+		              >
+		                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+		              </svg>
 		            </div>
 		          </div>
 		        </header>
-		        <div className="App-body">
-		          <div className="tile">
-		            <h2>Tile 1</h2>
-		          </div>
-		          <div className="tile">
-		            <h2>Tile 2</h2>
-		          </div>
-		          <div className="tile">
-		            <h2>Tile 3</h2>
-		          </div>
+		        <div className="tile-container">
+		          {tiles.map((tile) => (
+				            <Tile key={tile.id} text={tile.text} />
+				          ))}
 		        </div>
 		      </div>
 		    );
 }
 
 export default App;
-
