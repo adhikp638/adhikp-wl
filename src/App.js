@@ -1,43 +1,47 @@
-import { useState } from "react";
-import "./App.css";
+import React, { useState } from 'react';
+import './App.css';
 
 function App() {
-	  const [isActive, setActive] = useState(false);
+	  const [menuOpen, setMenuOpen] = useState(false);
 
-	  const handleToggle = () => {
-		      setActive(!isActive);
+	  const toggleMenu = () => {
+		      setMenuOpen(!menuOpen);
 		    };
 
 	  return (
 		      <div className="App">
-		        <header>
-		          <nav>
-		            <div className="burger-icon" onClick={handleToggle}>
-		              <span></span>
-		              <span></span>
-		              <span></span>
+		        <header className="App-header">
+		          <div className="container">
+		            <div className="menu-icon" onClick={toggleMenu}>
+		              <div className="menu-icon__line"></div>
+		              <div className="menu-icon__line"></div>
+		              <div className="menu-icon__line"></div>
 		            </div>
-		            <div className={`header-links ${isActive ? "active" : ""}`}>
+		            <nav className={`navbar ${menuOpen ? "show" : ""}`}>
+		              <ul>
+		                <li><a href="#">Menu Item 1</a></li>
+		                <li><a href="#">Menu Item 2</a></li>
+		                <li><a href="#">Menu Item 3</a></li>
+		              </ul>
+		            </nav>
+		            <div className="header-links">
 		              <a href="#">Link 1</a>
 		              <a href="#">Link 2</a>
 		              <a href="#">Link 3</a>
 		            </div>
-		          </nav>
+		          </div>
 		        </header>
-		        <main>
+		        <div className="App-body">
 		          <div className="tile">
 		            <h2>Tile 1</h2>
-		            <p>Some content here</p>
 		          </div>
 		          <div className="tile">
 		            <h2>Tile 2</h2>
-		            <p>Some content here</p>
 		          </div>
 		          <div className="tile">
 		            <h2>Tile 3</h2>
-		            <p>Some content here</p>
 		          </div>
-		        </main>
+		        </div>
 		      </div>
 		    );
 }
