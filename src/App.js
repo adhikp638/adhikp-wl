@@ -13,11 +13,12 @@ function App() {
 	  return (
 		      <div className="App">
 		        <header>
-		          <div className="burger-menu" onClick={toggleMenu}>
-		            <div className="line"></div>
-		            <div className="line"></div>
-		            <div className="line"></div>
-		          </div>
+
+		  	 <div className={`burger-menu ${isMenuOpen ? 'hidden' : ''}`} onClick={toggleMenu}>
+		    	   <div className="line"></div>
+		    	   <div className="line"></div>
+		           <div className="line"></div>
+		  	  </div>	
 		          <div className="header-links">
 		            <a href="/">Link1</a>
 		            <a href="/">Link2</a>
