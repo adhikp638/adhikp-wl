@@ -1,6 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Tile } from "@kiwicom/orbit-components";
-
 import "./App.css";
 
 function App() {
@@ -13,12 +12,11 @@ function App() {
 	  return (
 		      <div className="App">
 		        <header>
-
-		  	 <div className={`burger-menu ${isMenuOpen ? 'hidden' : ''}`} onClick={toggleMenu}>
-		    	   <div className="line"></div>
-		    	   <div className="line"></div>
-		           <div className="line"></div>
-		  	  </div>	
+		          <div className="burger-menu" onClick={toggleMenu}>
+		            <div className="line"></div>
+		            <div className="line"></div>
+		            <div className="line"></div>
+		          </div>
 		          <div className="header-links">
 		            <a href="/">Link1</a>
 		            <a href="/">Link2</a>
@@ -33,9 +31,9 @@ function App() {
 				        </div>
 				      )}
 		        <main>
-		          <Tile title="Tile 1" />
-		          <Tile title="Tile 2" />
-		          <Tile title="Tile 3" />
+		          <Tile raised title="Tile 1" />
+		          <Tile raised title="Tile 2" />
+		          <Tile raised title="Tile 3" />
 		        </main>
 		      </div>
 		    );
