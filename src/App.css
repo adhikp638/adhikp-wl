@@ -63,4 +63,46 @@ header {
 										      .Tile:hover {
 											        transform: translateY(-5px);
 											}
+.menu-container {
+	  position: absolute;
+	    top: 100%;
+	      left: 0;
+	        right: 0;
+		  background-color: white;
+		    border: 1px solid purple;
+		      z-index: 1;
+	      }
+
+	      .menu-items {
+		        display: flex;
+			  flex-direction: column;
+			    gap: 12px;
+			      padding: 12px;
+		      }
+
+		      @media only screen and (min-width: 768px) {
+			        .menu-container {
+					    display: flex;
+					        justify-content: flex-end;
+						    align-items: center;
+						        top: 0;
+							    right: 0;
+							        bottom: 0;
+								    left: auto;
+								        border: none;
+									  }
+
+									    .menu-items {
+										        flex-direction: row;
+											    padding: 0;
+											      }
+
+											        .menu-items > * {
+													    margin-right: 12px;
+													      }
+
+													        .menu-items > *:last-child {
+															    margin-right: 0;
+															      }
+														      }
 

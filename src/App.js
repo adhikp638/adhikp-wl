@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Tile } from "@kiwicom/orbit-components";
 import "./App.css";
 
@@ -22,18 +22,20 @@ function App() {
 		            <a href="/">Link2</a>
 		            <a href="/">Link3</a>
 		          </div>
+		          {isMenuOpen && (
+				            <div className="menu-container">
+				              <div className="menu-items">
+				                <a href="/">Menu Item 1</a>
+				                <a href="/">Menu Item 2</a>
+				                <a href="/">Menu Item 3</a>
+				              </div>
+				            </div>
+				          )}
 		        </header>
-		        {isMenuOpen && (
-				        <div className="menu-items">
-				          <a href="/">Menu Item 1</a>
-				          <a href="/">Menu Item 2</a>
-				          <a href="/">Menu Item 3</a>
-				        </div>
-				      )}
 		        <main>
-		          <Tile raised title="Tile 1" />
-		          <Tile raised title="Tile 2" />
-		          <Tile raised title="Tile 3" />
+		          <Tile title="Tile 1" />
+		          <Tile title="Tile 2" />
+		          <Tile title="Tile 3" />
 		        </main>
 		      </div>
 		    );
