@@ -1,69 +1,53 @@
-.App {
-	  font-family: sans-serif;
-	  text-align: center;
-}
+import React from "react";
+import styled from "styled-components";
 
-.top-row {
-	  display: flex;
-	  justify-content: space-between;
-	  align-items: center;
-	  background-color: #f5f5f5;
-	  padding: 10px;
-	  position: relative;
-}
+const MenuContainer = styled.div`
+  position: relative;
+    display: inline-block;
+    `;
 
-.burger-menu {
-	  font-size: 24px;
-	  cursor: pointer;
-	  margin-right: 10px;
-}
+const BurgerIcon = styled.div`
+  width: 30px;
+    height: 3px;
+      background-color: black;
+        margin: 5px 0;
+	`;
 
-.menu-popup {
-	  position: absolute;
-	  top: 100%;
-	  right: 0;
-	  background-color: #fff;
-	  border: 1px solid purple;
-	  border-radius: 5px;
-	  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-	  padding: 10px;
-	  z-index: 1;
-	  opacity: ${(props) => (props.isMenuOpen ? "1" : "0")};
-	  transform: translateY(${(props) => (props.isMenuOpen ? "0" : "-10px")});
-	  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
-
-.menu-item {
-	  margin: 10px;
-	  cursor: pointer;
-}
-
-.menu-item:hover {
-	  color: purple;
-}
-
-.tile-row {
-	  display: flex;
-	  justify-content: space-between;
-	  align-items: center;
-	  padding: 10px;
-	  background-color: #f5f5f5;
-}
-
-.tile {
-	  width: 30%;
-	  height: 150px;
-	  background-color: #fff;
-	  border-radius: 5px;
-	  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+const PopupContainer = styled.div`
+  position: absolute;
+    top: 35px;
+      left: 0;
+        width: 200px;
 	  padding: 20px;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  transition: transform 0.3s ease-out;
-}
+	    background-color: white;
+	      border: 1px solid purple;
+	        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		  z-index: 1;
+		  `;
 
-.tile:hover {
-	  transform: translateY(-10px);
-}
+const MenuItem = styled.div`
+  padding: 10px;
+    &:hover {
+        background-color: lightgray;
+	  }
+	  `;
+
+const BurgerMenu = () => {
+	  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+	  return (
+		      <MenuContainer>
+		        <BurgerIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
+		        {isMenuOpen && (
+				        <PopupContainer>
+				          <MenuItem>Menu Item 1</MenuItem>
+				          <MenuItem>Menu Item 2</MenuItem>
+				          <MenuItem>Menu Item 3</MenuItem>
+				        </PopupContainer>
+				      )}
+		      </MenuContainer>
+		    );
+};
+
+export default BurgerMenu;
 
