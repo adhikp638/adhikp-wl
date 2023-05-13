@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Tile } from "@kiwicom/orbit-components";
+import BurgerMenu from './BurgerMenu';
 import "./App.css";
 
 function App() {
