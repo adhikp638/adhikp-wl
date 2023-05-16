@@ -1,0 +1,28 @@
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.burger-icon {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 6px;
+  cursor: pointer;
+}
+
+.popup-container {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 200px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid purple;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.menu-item {
+  padding: 10px;
+}

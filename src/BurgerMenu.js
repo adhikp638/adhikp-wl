@@ -1,53 +1,38 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import './BurgerMenu.css';
 
-const MenuContainer = styled.div`
-  position: relative;
-    display: inline-block;
-    `;
+const BurgerMenu = ({ isMenuOpen, handleMenuClick }) => {
+  const menuRef = React.useRef();
 
-const BurgerIcon = styled.div`
-  width: 30px;
-    height: 3px;
-      background-color: black;
-        margin: 5px 0;
-	`;
+  const handleClick = (e) => {
+    if (menuRef.current && !menuRef.current.contains(e.target)) {
+      handleMenuClick();
+    }
+  };
 
-const PopupContainer = styled.div`
-  position: absolute;
-    top: 35px;
-      left: 0;
-        width: 200px;
-	  padding: 20px;
-	    background-color: white;
-	      border: 1px solid purple;
-	        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-		  z-index: 1;
-		  `;
+  React.useEffect(() => {
+    document.addEventListener('mousedown', handleClick);
 
-const MenuItem = styled.div`
-  padding: 10px;
-    &:hover {
-        background-color: lightgray;
-	  }
-	  `;
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+    };
+  }, [handleMenuClick]);
 
-const BurgerMenu = () => {
-	  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  return (
+    <div className={`menu-container ${isMenuOpen ? 'open' : ''}`} onClick={handleMenuClick}>
+      <div className="burger-icon"></div>
+      <div className="burger-icon"></div>
+      <div className="burger-icon"></div>
 
-	  return (
-		      <MenuContainer>
-		        <BurgerIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
-		        {isMenuOpen && (
-				        <PopupContainer>
-				          <MenuItem>Menu Item 1</MenuItem>
-				          <MenuItem>Menu Item 2</MenuItem>
-				          <MenuItem>Menu Item 3</MenuItem>
-				        </PopupContainer>
-				      )}
-		      </MenuContainer>
-		    );
+      {isMenuOpen && (
+        <div className="popup-container" ref={menuRef}>
+          <div className="menu-item">Menu Item 1</div>
+          <div className="menu-item">Menu Item 2</div>
+          <div className="menu-item">Menu Item 3</div>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default BurgerMenu;
-

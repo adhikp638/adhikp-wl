@@ -1,46 +1,103 @@
-import { useState } from "react";
-import { Tile } from "@kiwicom/orbit-components";
-import BurgerMenu from './BurgerMenu';
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+import logo from './wealthlane.svg';
+import BurgerMenu from "./BurgerMenu";
+import Fade from 'react-reveal/Fade';
+import './App.css';
 
 function App() {
-	  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	  const toggleMenu = () => {
-		      setIsMenuOpen(!isMenuOpen);
-		    };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	  return (
-		      <div className="App">
-		        <header>
-		          <div className="burger-menu" onClick={toggleMenu}>
-		            <div className="line"></div>
-		            <div className="line"></div>
-		            <div className="line"></div>
-		          </div>
-		          <div className="header-links">
-		            <a href="/">Link1</a>
-		            <a href="/">Link2</a>
-		            <a href="/">Link3</a>
-		          </div>
-		          {isMenuOpen && (
-				            <div className="menu-container">
-				              <div className="menu-items">
-				                <a href="/">Menu Item 1</a>
-				                <a href="/">Menu Item 2</a>
-				                <a href="/">Menu Item 3</a>
-				              </div>
-				            </div>
-				          )}
-		        </header>
-		        <main>
-		          <Tile title="Tile 1" />
-		          <Tile title="Tile 2" />
-		          <Tile title="Tile 3" />
-		        </main>
-		      </div>
-		    );
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <div>
+    <header>
+
+        <BurgerMenu isMenuOpen={isMenuOpen} handleMenuClick={handleMenuClick} />
+        <img src={logo} alt="logo" className="logo" />
+	  <div className="header-links"> Home | About | Contact </div>
+
+    </header>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="card-container">
+      <Fade top distance="10%" duration={1500}>
+        <div className="card-image">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+        <div className="card-content">Reporting: Powerful reporting and analytics that helps you answer questions like</div>
+      </Fade>
+    </div>
+
+    <div className="footer">
+	<text>Some random content</text>
+    </div>
+
+    </div>
+  );
 }
 
 export default App;
-

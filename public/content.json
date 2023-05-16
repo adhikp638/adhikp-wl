@@ -1,0 +1,16 @@
+{
+  "tiles": [
+    {
+      "title": "Tile 1",
+      "content": "Content for Tile 1"
+    },
+    {
+      "title": "Tilfe 2",
+      "content": "Content for Tile 2"
+    },
+    {
+      "title": "Tile 3",
+      "content": "Content for Tile 3"
+    }
+  ]
+}
