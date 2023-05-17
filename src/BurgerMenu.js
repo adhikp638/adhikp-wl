@@ -26,9 +26,8 @@ const BurgerMenu = ({ isMenuOpen, handleMenuClick }) => {
 
       {isMenuOpen && (
         <div className="popup-container" ref={menuRef}>
-          <div className="menu-item"><a href="http://www.cnn.com">Menu Item 1</a></div>
-          <div className="menu-item">Menu Item 2</div>
-          <div className="menu-item">Menu Item 3</div>
+          <div className="menu-item"><a href="https://wealthlane-participant-uat.wealthlane.co">Participant Login</a></div>
+          <div className="menu-item"><a href="https://wealthlane-customer-uat.wealthlane.co">Admin Login</a></div>
         </div>
       )}
     </div>
