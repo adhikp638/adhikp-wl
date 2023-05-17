@@ -105,8 +105,9 @@ li {
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    align-items: center;
-    margin-left: 0;
+    align-items: left;
+    margin-left: 5;
+    margin-top: 5;
   }
 
   .header-links {
@@ -123,4 +124,17 @@ li {
     flex-direction: column;
     padding: 10px;
   }
+
+  .card-image {
+
+   max-width: 0px;
+   max-width: 0px;
+ 
+  }
+  .body-image {
+   max-width: 0px;
+   max-width: 0px;
+   width: 0%;
+  }
+
 }
