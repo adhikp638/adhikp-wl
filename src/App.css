@@ -8,6 +8,7 @@
 header {
       display: flex;
 	flex-direction: row;
+	margin-left: 15px;
 }
 
 .header-links {
@@ -22,6 +23,15 @@ header {
   border: 10;
 }
 
+.body-image {
+	max-width: 400px;
+	min-width: 200px;
+	max-height: 250px;
+	min-height: 250px;
+	width: 100%;
+	height: 100%;
+}
+
 .card-container {
 	display: flex;
 	flex-direction: row;
@@ -34,33 +44,31 @@ header {
 .card-image {
 	max-width: 400px;
 	min-width: 200px;
-	max-height: 200px;
-	min-height: 200px;
+	max-height: 250px;
+	min-height: 250px;
 	width: 100%;
 	height: 100%;
 
-	background-image: url('../public/reporting.svg');
 	background-color: white;
 	margin: 0px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
 .card-content {
 	max-width: 400px;
 	min-width: 200px;
-	max-height: 200px;
-	min-height: 200px;
+	max-height: 250px;
+	min-height: 250px;
 	width: 100%;
-	height: 100%;
+	height: 100%;;
 
 	background-color: white;
 	margin: 0px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: left;
 }
 
 .footer {
@@ -76,4 +84,18 @@ header {
 text {
 	background-color: transparent;
 	color: white;
+}
+
+p {
+     margin: 10px;
+}
+
+ul {
+ list-style-type:disc;
+ margin: 10px;
+}
+
+li {
+ margin: 10px;
+
 }
