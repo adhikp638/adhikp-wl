@@ -88,6 +88,7 @@ text {
 
 p {
      margin: 10px;
+     font-size: 12px;
 }
 
 ul {
@@ -96,6 +97,6 @@ ul {
 }
 
 li {
- margin: 10px;
+ margin: 5px;
 
 }
