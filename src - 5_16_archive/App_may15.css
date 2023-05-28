@@ -1,0 +1,73 @@
+.tab1 {
+  background-color: orange;
+  position: relative;
+}
+
+.tab1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: purple;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.logo {
+  width: 150px;
+  margin: 20px;
+  border: 10;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.fadeIn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th {
+  text-align: center; /* Center align the tab headers */
+  padding: 10px; /* Add padding to create some space around the tabs */
+  background-color: #f1f1f1; /* Set the background color for the tabs */
+  cursor: pointer; /* Add cursor pointer to indicate interactivity */
+}
+
+th.active {
+  background-color: orange; /* Set the background color for the active tab */
+  color: white; /* Set the text color for the active tab */
+}
+
+.staticColumn {
+  text-align: right;
+  white-space: nowrap;
+}
+
+

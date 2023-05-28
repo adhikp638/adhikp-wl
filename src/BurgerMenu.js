@@ -1,41 +1,60 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './BurgerMenu.css';
-import Fade from 'react-reveal/Fade';
 
+const BurgerMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSubMenu, setActiveSubMenu] = useState(null);
 
-const BurgerMenu = ({ isMenuOpen, handleMenuClick }) => {
-  const menuRef = useRef();
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    setActiveSubMenu(null);
+  };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target) && isMenuOpen) {
-        handleMenuClick(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [handleMenuClick, isMenuOpen]);
+  const toggleSubMenu = (index) => {
+    setActiveSubMenu(activeSubMenu === index ? null : index);
+  };
 
   return (
-    <div className="container" onClick={() => handleMenuClick(!isMenuOpen)}>
-      <div className={`burger-icon ${isMenuOpen ? 'active' : ''}`} />
-      <div className={`burger-icon ${isMenuOpen ? 'active' : ''}`} />
-      <div className={`burger-icon ${isMenuOpen ? 'active' : ''}`} />
-      <div className={`popup-container ${isMenuOpen ? 'open' : ''}`} ref={menuRef}>
-      <div className="close-btn">
-		<div className="burger-icon-open"/>
-		<div className="burger-icon-open"/>
-		<div className="burger-icon-open"/>
-       </div>
-	 <div>&nbsp;</div>
-
-        <a href="https://wealthlane-participant-uat.wealthlane.co" className="menu-item-link"><div className="menu-item">Participant Login</div></a>
-        <a href="https://wealthlane-customer-uat.wealthlane.co" className="menu-item-link"><div className="menu-item">Admin Login</div></a>
+    <div className={`burger-menu-container ${isOpen ? 'open' : ''}`}>
+      <div className="burger-icon" onClick={toggleMenu}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </div>
+      {isOpen && (
+        <div className="menu-popup">
+          <div className="menu-item" onClick={() => toggleSubMenu(1)}>
+            Item 1
+            {activeSubMenu === 1 && (
+              <div className="sub-menu">
+                <div className="sub-menu-item">Sub Menu 1</div>
+                <div className="sub-menu-item">Sub Menu 2</div>
+                <div className="sub-menu-item">Sub Menu 3</div>
+              </div>
+            )}
+          </div>
+          <div className="menu-item" onClick={() => toggleSubMenu(2)}>
+            Item 2
+            {activeSubMenu === 2 && (
+              <div className="sub-menu">
+                <div className="sub-menu-item">Sub Menu 4</div>
+                <div className="sub-menu-item">Sub Menu 5</div>
+                <div className="sub-menu-item">Sub Menu 6</div>
+              </div>
+            )}
+          </div>
+          <div className="menu-item" onClick={() => toggleSubMenu(3)}>
+            Item 3
+            {activeSubMenu === 3 && (
+              <div className="sub-menu">
+                <div className="sub-menu-item">Sub Menu 7</div>
+                <div className="sub-menu-item">Sub Menu 8</div>
+                <div className="sub-menu-item">Sub Menu 9</div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,125 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-container {
+  display: flex;
+  position: relative;
+  border-style: solid;
+  justify-content: center;
+}
+
+.menu-trigger {
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  padding: 20px;
+}
+
+.menu-popup {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  opacity: 0;
+  animation: fade-in 0.3s ease-in-out forwards;
+  top: calc(100% + 10px); /* Position the menu popup below the menu trigger with spacing */
+  right: 0; /* Align the right side of the menu popup with the right side of the menu trigger */
+  transform-origin: top right;
+  transform: translateY(10px); /* Add some spacing */
+
+  border-style: solid;
+}
+
+.menu-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-items li {
+  cursor: pointer;
+}
+
+.sub-menu-popup {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  opacity: 0;
+  animation: fade-in 0.3s ease-in-out forwards;
+  top: 0;
+  left: 100%; /* Position the sub-menu popup to the right of the menu popup */
+  transform-origin: top left;
+  transform: translateX(10px); /* Add some spacing */
+}
+
+.sub-menu-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sub-menu-items li {
+  cursor: pointer;
+}
+
+/* Position Variations */
+.menu-position-top-right .menu-popup {
+  top: calc(100% + 10px);
+  right: 0;
+  transform-origin: top right;
+  transform: translateY(10px);
+}
+
+.menu-position-top-left .menu-popup {
+  top: calc(100% + 10px);
+  left: 0;
+  transform-origin: top left;
+  transform: translateY(10px);
+}
+
+.menu-position-bottom-right .menu-popup {
+  bottom: calc(100% + 10px);
+  right: 0;
+  transform-origin: bottom right;
+  transform: translateY(-10px);
+}
+
+.menu-position-bottom-left .menu-popup {
+  bottom: calc(100% + 10px);
+  left: 0;
+  transform-origin: bottom left;
+  transform: translateY(-10px);
+}
+
+.menu-position-top-right .sub-menu-popup {
+  top: 0;
+  right: 100%; /* Position the sub-menu popup to the left of the menu popup */
+  transform-origin: top right;
+  transform: translateX(-10px); /* Add some spacing */
+}
+
+.menu-position-top-left .sub-menu-popup {
+  top: 0;
+  left: 100%; /* Position the sub-menu popup to the right of the menu popup */
+  transform-origin: top left;
+  transform: translateX(10px); /* Add some spacing */
+}
+
+.menu-position-bottom-right .sub-menu-popup {
+  bottom: 0;
+  right: 100%; /* Position the sub-menu popup to the left of the menu popup */
+  transform-origin: bottom right;
+  transform: translateX(-10px); /* Add some spacing */
+}
+
+.menu-position-bottom-left .sub-menu-popup {
+  bottom: 0;
+  left: 100%; /* Position the sub-menu popup to the right of the menu popup */
+  transform-origin: bottom left;
+  transform: translateX(10px); /* Add some spacing */
+}

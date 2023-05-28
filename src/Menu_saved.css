@@ -1,0 +1,55 @@
+.menu-container {
+  position: relative;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px; /* Add some spacing between items */
+}
+
+.menu-item.active {
+  font-weight: bold;
+}
+
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.menu-item.active .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.sub-menu-content {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.sub-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sub-menu ul li {
+  margin-bottom: 5px;
+}
