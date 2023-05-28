@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const OPEN_API_KEY = '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';
+const MY_OPEN_API_KEY = 'process.env.OPEN_API_KEY';
 
 const App_test = () => {
   const [response, setResponse] = useState('');
@@ -23,7 +23,7 @@ const App_test = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${OPEN_API_KEY}`
+          'Authorization': `Bearer ${MY_OPEN_API_KEY}`
         },
         body: JSON.stringify({
           prompt: "From this list of numbered questions " + inputText + " which closely matches " + "'" + inputQuestion + "'" + "? print out the questions and match percentage in decreasing order of match percentage", // Use the input text as the prompt
