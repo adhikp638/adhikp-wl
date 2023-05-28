@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const OPEN_API_KEY = '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';
+const OPEN_API_KEY = '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';
 
 const App_test = () => {
   const [response, setResponse] = useState('');
