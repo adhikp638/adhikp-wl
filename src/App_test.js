@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const OPEN_API_KEY = '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';
+const OPEN_API_KEY = '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';
 
 const App_test = () => {
   const [response, setResponse] = useState('');
@@ -8,7 +8,7 @@ const App_test = () => {
   const [inputText, setInputText] = useState('"1. How do i customize taxes?   2. Is there a way to customize taxes?   3. Is a participant tax able to be overriden?   4. Is there documentation for customizing reporting?"');
   const [inputQuestion, setInputQuestion] = useState('');
 
-  
+
   const handleInputChange = (e) => {
     setInputText(e.target.value);
   };
