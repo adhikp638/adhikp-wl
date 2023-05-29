@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const MY_OPEN_API_KEY = 'process.env.OPEN_API_KEY';
+const MY_OPEN_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
 const App_test = () => {
   const [response, setResponse] = useState('');
@@ -26,9 +26,12 @@ const App_test = () => {
           'Authorization': `Bearer ${MY_OPEN_API_KEY}`
         },
         body: JSON.stringify({
-          prompt: "From this list of numbered questions " + inputText + " which closely matches " + "'" + inputQuestion + "'" + "? print out the questions and match percentage in decreasing order of match percentage", // Use the input text as the prompt
+          prompt: `Given a target phrase and a list of phrases, find the most similar phrase from the list:\n
+          Input list: ${inputText}\n
+          Target phrase: '${inputQuestion}'\n
+          Print out the questions and match percentage in decreasing order of match percentage`,
           max_tokens: 100,
-          temperature:0.0
+          temperature: 0.0
         })
       });
 
@@ -51,10 +54,12 @@ const App_test = () => {
     <div>
       <h1>List of possible questions</h1>
       <div>
-        <textarea value={inputText} onChange={handleInputChange} />
+        <textarea value={inputText} onChange={handleInputChange} style={{ width: '350px', height: '300px' }}/>
         </div>
         <div>
-        <textarea value={inputQuestion} onChange={handleInputQuestion} />
+        <h1>Enter question</h1><textarea value={inputQuestion} onChange={handleInputQuestion} style={{ width: '350px' }} />
+        </div>
+        <div>
         <button onClick={handleButtonClick}>Get Response</button>
       </div>
       {response && <p>Response: {response}</p>}
