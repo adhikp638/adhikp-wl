@@ -2,6 +2,7 @@
 
 #env variables for local
 /local_props.env
+/.env
 
 # dependencies
 /node_modules
