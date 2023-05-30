@@ -8,7 +8,7 @@ const App_test = () => {
   const [inputText, setInputText] = useState('"1. How do i customize taxes?   2. Is there a way to customize taxes?   3. Is a participant tax able to be overriden?   4. Is there documentation for customizing reporting?"');
   const [inputQuestion, setInputQuestion] = useState('');
 
-
+  
   const handleInputChange = (e) => {
     setInputText(e.target.value);
   };
