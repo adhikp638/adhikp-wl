@@ -19,7 +19,7 @@ const App_test = () => {
 
   const handleButtonClick = async () => {
     try {
-      const response = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+      const response = await fetch('https://api.openai.com/v1/engines/curie/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,16 +1,59 @@
 import React  from 'react';
 import Navbar from './components/Nav/Navbar';
 
-
 function App() {
 
 
 
   return (
-    <div>
-      
-      App
-    </div>
+      <div className='App'>
+        <Navbar />
+        <ul>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+          <li>App</li>
+
+        </ul>
+      </div>
+
   );
 }
 
