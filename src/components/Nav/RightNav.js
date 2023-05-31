@@ -24,8 +24,8 @@ const Ul = styled.ul`
     padding-top: 3.5rem;
 
     body {
-        overflow: hidden;
-    }
+        overflow-x: hidden;
+      }
 
     li {
       color: #fff;
@@ -35,7 +35,6 @@ const Ul = styled.ul`
 `;
 
 const RightNav = ({ open }) => {
- 
   return (
     <Ul open={open}>
       <li>Home</li>
